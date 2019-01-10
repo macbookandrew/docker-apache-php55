@@ -22,10 +22,11 @@ COPY run /usr/local/bin/run
 RUN chmod +x /usr/local/bin/run
 RUN a2enmod rewrite
 RUN pecl install xdebug-2.5.5
-RUN echo 'zend_extension="/usr/local/lib/php/extensions/no-debug-non-zts-20151012/xdebug.so"' >> /etc/php5/apache2/php.ini
+RUN echo 'zend_extension="/usr/lib/php5/20121212/xdebug.so"' >> /etc/php5/apache2/php.ini
 RUN echo 'xdebug.remote_port=9002' >> /etc/php5/apache2/php.ini
 RUN echo 'xdebug.remote_enable=1' >> /etc/php5/apache2/php.ini
 RUN echo 'xdebug.remote_connect_back=1' >> /etc/php5/apache2/php.ini
+RUN echo 'short_open_tag = On' >> /etc/php5/apache2/php.ini
 
 EXPOSE 80 443
 CMD ["/usr/local/bin/run"]
