@@ -28,5 +28,5 @@ RUN echo 'xdebug.remote_enable=1' >> /etc/php5/apache2/php.ini
 RUN echo 'xdebug.remote_connect_back=1' >> /etc/php5/apache2/php.ini
 RUN echo 'short_open_tag = On' >> /etc/php5/apache2/php.ini
 
-EXPOSE 80 443
+EXPOSE 80 443 9002
 CMD ["/usr/local/bin/run"]
